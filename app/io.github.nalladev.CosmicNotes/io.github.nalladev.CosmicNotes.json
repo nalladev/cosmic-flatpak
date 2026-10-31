@@ -1,5 +1,5 @@
 {
-  "id": "com.github.nalladev.cosmic-notes",
+  "id": "io.github.nalladev.cosmic-notes",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "25.08",
   "sdk": "org.freedesktop.Sdk",
@@ -12,9 +12,10 @@
     "--share=ipc",
     "--socket=wayland",
     "--socket=fallback-x11",
+    "--talk-name=com.system76.CosmicSettingsDaemon.*",
+    "--talk-name=com.system76.CosmicSettingsDaemon",
     "--device=dri",
-    "--filesystem=xdg-documents",
-    "--talk-name=org.freedesktop.portal.Desktop"
+    "--filesystem=xdg-documents"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
@@ -31,9 +32,9 @@
         "cargo --offline fetch --manifest-path Cargo.toml --verbose",
         "cargo --offline build --release --verbose",
         "install -Dm0755 ./target/release/cosmic-notes /app/bin/cosmic-notes",
-        "install -Dm0644 ./resources/app.desktop /app/share/applications/com.github.nalladev.cosmic-notes.desktop",
-        "install -Dm0644 ./resources/app.metainfo.xml /app/share/metainfo/com.github.nalladev.cosmic-notes.metainfo.xml",
-        "install -Dm0644 ./resources/icon.svg /app/share/icons/hicolor/scalable/apps/com.github.nalladev.cosmic-notes.svg"
+        "install -Dm0644 ./resources/app.desktop /app/share/applications/io.github.nalladev.cosmic-notes.desktop",
+        "install -Dm0644 ./resources/app.metainfo.xml /app/share/metainfo/io.github.nalladev.cosmic-notes.metainfo.xml",
+        "install -Dm0644 ./resources/icon.svg /app/share/icons/hicolor/scalable/apps/io.github.nalladev.cosmic-notes.svg"
       ],
       "sources": [
         {
